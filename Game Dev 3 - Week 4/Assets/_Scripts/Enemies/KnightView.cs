@@ -9,7 +9,7 @@ namespace GameDevWithMarco.Enemies
     {
         [SerializeField] GameEvent playerSpottedEvent;
 
-        bool hasPlayerBeenSpotted = false;
+        public bool hasPlayerBeenSpotted = false;
         private void OnTriggerEnter(Collider other)
         {
             if (other.tag == "Player" && !hasPlayerBeenSpotted)
