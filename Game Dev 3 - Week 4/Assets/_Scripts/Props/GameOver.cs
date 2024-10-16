@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace GameDevWithMarco
+namespace GameDevWithMarco.ObserverPattern
 {
     public class GameOver : MonoBehaviour
     {
         public GameObject[] objectsToActivateOnDeath;
 
-        KnightView knightView;
+        [SerializeField]KnightView knightView;
         // Start is called before the first frame update
         void Start()
         {
-            knightView = FindObjectOfType<KnightView>();
+            knightView = FindAnyObjectByType<KnightView>();
             foreach (var items in objectsToActivateOnDeath)
             {
                 items.gameObject.SetActive(false);
@@ -30,6 +30,7 @@ namespace GameDevWithMarco
                 foreach (var items in objectsToActivateOnDeath)
                 {
                     items.gameObject.SetActive(true);
+                    Debug.Log("GO ON");
                 }
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;

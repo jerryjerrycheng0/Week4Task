@@ -1880,6 +1880,18 @@ MonoBehaviour:
   target: {fileID: 1552547634}
   offset: {x: 12, y: 12, z: 8}
   smoothSpeed: 0.125
+--- !u!114 &337109258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3369329194314290761, guid: 3713ac8ddf6874e45a11e521cc679b10,
+    type: 3}
+  m_PrefabInstance: {fileID: 3109539663838342271}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1c682b4c0f02604ba2e1913e629132d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &375337243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2216,6 +2228,7 @@ MonoBehaviour:
   - {fileID: 108766697}
   - {fileID: 1356617576}
   - {fileID: 327657606}
+  knightView: {fileID: 337109258}
 --- !u!114 &444170501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8714,6 +8727,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight
       objectReference: {fileID: 0}
+    - target: {fileID: 2444975955436995979, guid: 3713ac8ddf6874e45a11e521cc679b10,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369329194314290761, guid: 3713ac8ddf6874e45a11e521cc679b10,
+        type: 3}
+      propertyPath: gameOver
+      value: 
+      objectReference: {fileID: 444170500}
     - target: {fileID: 9072858039139024391, guid: 3713ac8ddf6874e45a11e521cc679b10,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9027,6 +9050,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: RotatingKnight
       objectReference: {fileID: 0}
+    - target: {fileID: 2444975955436995979, guid: f2797984d33816e409f456859ed5f84e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369329194314290761, guid: f2797984d33816e409f456859ed5f84e,
+        type: 3}
+      propertyPath: gameOver
+      value: 
+      objectReference: {fileID: 444170500}
     - target: {fileID: 9072858039139024391, guid: f2797984d33816e409f456859ed5f84e,
         type: 3}
       propertyPath: m_LocalPosition.x
