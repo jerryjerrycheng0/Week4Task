@@ -1,4 +1,5 @@
 using GameDevWithMarco.EnvironmentalProps;
+using GameDevWithMarco.Interfaces;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,22 +35,10 @@ namespace GameDevWithMarco.Player
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Torch torch = thingIAmCollidingWith.GetComponent<Torch>();
-                if (torch != null)
+                IInteractable interactableObject = thingIAmCollidingWith.GetComponent<IInteractable>();
+                if (interactableObject != null)
                 {
-                    torch.TurnTorchOnOff();
-                }
-
-                Chest chest = thingIAmCollidingWith.GetComponent<Chest>();
-                if (chest != null)
-                {
-                    chest.OpenTheChest();
-                }
-
-                Elevator elevator = thingIAmCollidingWith.GetComponent<Elevator>();
-                if (elevator != null)
-                {
-                    elevator.StartElevator();
+                    interactableObject.Interact();
                 }
             }
         }

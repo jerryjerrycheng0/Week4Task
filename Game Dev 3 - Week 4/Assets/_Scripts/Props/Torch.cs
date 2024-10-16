@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using GameDevWithMarco.Interfaces;
 
 
 namespace GameDevWithMarco.EnvironmentalProps
 {
-    public class Torch : MonoBehaviour
+    public class Torch : MonoBehaviour, IInteractable
     {
         private bool isTheTorchOn = true;
         private Light torchLight;
@@ -21,7 +22,7 @@ namespace GameDevWithMarco.EnvironmentalProps
             defaultIntensity = torchLight.intensity;
         }
 
-        public void TurnTorchOnOff()
+        private void TurnTorchOnOff()
         {
             if (isTheTorchOn)
             {
@@ -33,6 +34,11 @@ namespace GameDevWithMarco.EnvironmentalProps
             }
 
             isTheTorchOn = !isTheTorchOn;
+        }
+
+        public void Interact()
+        {
+            TurnTorchOnOff();
         }
     }
 }
