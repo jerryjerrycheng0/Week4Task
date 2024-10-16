@@ -35,6 +35,7 @@ namespace GameDevWithMarco.Player
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                if (thingIAmCollidingWith == null) return;
                 IInteractable interactableObject = thingIAmCollidingWith.GetComponent<IInteractable>();
                 if (interactableObject != null)
                 {
