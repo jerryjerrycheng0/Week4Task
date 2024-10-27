@@ -11,6 +11,10 @@ namespace GameDevWithMarco.Player
         private Vector3 movemenInput;
         private Camera cam;
         [SerializeField] float rotationSpeed;
+        [SerializeField] AudioSource audioSource;
+        public AudioClip walkingSound;
+        [SerializeField] float walkingSoundDelay = 0.1f;
+        private float nextWalkingSoundTime = 0f;
 
 
         // Start is called before the first frame update
@@ -47,6 +51,29 @@ namespace GameDevWithMarco.Player
             Vector3 movement = (verticalInput * cameraForward + horizontalInput * cam.transform.right).normalized;
             //To store the correct input values
             movemenInput = movement * movementSpeed;
+
+            WalkingSounds();
+        }
+
+        private void WalkingSounds()
+        {
+            if (movemenInput != Vector3.zero)
+            {
+                transform.forward = Vector3.Slerp(transform.forward, movemenInput.normalized, Time.deltaTime * rotationSpeed);
+
+
+                if (!audioSource.isPlaying && Time.time >= nextWalkingSoundTime)
+                {
+                    audioSource.clip = walkingSound;
+                    audioSource.Play();
+                    nextWalkingSoundTime = Time.time + walkingSoundDelay;
+                }
+            }
+            else
+            {
+
+                audioSource.Stop();
+            }
         }
 
         private void RotateTowardMovementDirection()

@@ -22,10 +22,12 @@ namespace GameDevWithMarco.EnvironmentalProps
 
         private void StartElevator()
         {
-
+            if (hasArrived == false)
+            {
                 elevatorRb.DOMove(endLocation.position, moveDuration);
                 hasArrived = true;
-            if (hasArrived)
+            }
+            else
             {
                 elevatorRb.DOMove(startLocation.position, moveDuration);
                 hasArrived = false;
