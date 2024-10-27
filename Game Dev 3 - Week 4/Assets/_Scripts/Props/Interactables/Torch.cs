@@ -15,6 +15,7 @@ namespace GameDevWithMarco.EnvironmentalProps
 
         [SerializeField] float torchTurningTime;
         [SerializeField] Ease torchTurningEase;
+        public AudioSource lightSound;
 
         private void Start()
         {
@@ -24,6 +25,7 @@ namespace GameDevWithMarco.EnvironmentalProps
 
         private void TurnTorchOnOff()
         {
+            lightSound.Play();
             if (isTheTorchOn)
             {
                 torchLight.DOIntensity(0, torchTurningTime).SetEase(torchTurningEase);

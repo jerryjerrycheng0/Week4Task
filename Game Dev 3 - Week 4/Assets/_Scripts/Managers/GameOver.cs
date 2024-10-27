@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameDevWithMarco.ObserverPattern
+namespace GameDevWithMarco.Managers
 {
     public class GameOver : MonoBehaviour
     {

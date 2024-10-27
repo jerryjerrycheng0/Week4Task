@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace GameDevWithMarco
+namespace GameDevWithMarco.Managers
 {
     public class Reset : MonoBehaviour
     {
