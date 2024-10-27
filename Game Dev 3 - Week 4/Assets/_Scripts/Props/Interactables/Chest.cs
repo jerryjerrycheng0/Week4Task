@@ -11,11 +11,14 @@ namespace GameDevWithMarco.EnvironmentalProps
         Animator anim;
         public int moneyValue;
         [SerializeField] AudioSource collectSound;
+        PlayerMoney playerMoney;
+
 
         // Start is called before the first frame update
         void Start()
         {
             anim = GetComponent<Animator>();
+            playerMoney = FindObjectOfType<PlayerMoney>();
         }
 
         public void OpenTheChest()
@@ -26,7 +29,7 @@ namespace GameDevWithMarco.EnvironmentalProps
         public void Collect()
         {
             // Add the value to the player's money
-            PlayerMoney.Instance.AddMoney(moneyValue);
+            playerMoney.AddMoney(moneyValue);
             collectSound.Play();
         }
 

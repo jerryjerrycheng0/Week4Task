@@ -13,11 +13,13 @@ namespace GameDevWithMarco.EnvironmentalProps
         public AudioSource collectSound; // Sound to play when collected
         MeshRenderer meshRenderer;
         Collider sackCollider;
+        PlayerMoney playerMoney;
 
         public void Start()
         {
             meshRenderer = GetComponent<MeshRenderer>();
             sackCollider = GetComponent<Collider>();
+            playerMoney = FindObjectOfType<PlayerMoney>();
 
             if (!isBig)
             {
@@ -30,7 +32,7 @@ namespace GameDevWithMarco.EnvironmentalProps
         }
         public void Collect()
         {
-            PlayerMoney.Instance.AddMoney(moneyValue);
+            playerMoney.AddMoney(moneyValue);
             collectSound.Play();
             meshRenderer.enabled = false;
             sackCollider.enabled = false;
