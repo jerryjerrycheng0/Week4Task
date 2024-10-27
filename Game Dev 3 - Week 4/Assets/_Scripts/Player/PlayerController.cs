@@ -11,6 +11,8 @@ namespace GameDevWithMarco.Player
         private Vector3 movemenInput;
         private Camera cam;
         [SerializeField] float rotationSpeed;
+
+
         // Start is called before the first frame update
         void Start()
         {

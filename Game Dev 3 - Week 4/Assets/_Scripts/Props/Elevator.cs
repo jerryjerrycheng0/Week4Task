@@ -9,8 +9,11 @@ namespace GameDevWithMarco.EnvironmentalProps
     public class Elevator : MonoBehaviour, IInteractable
     {
         [SerializeField] Transform endLocation;
+        [SerializeField] Transform startLocation;
         [SerializeField] float  moveDuration;
         Rigidbody elevatorRb;
+        public bool hasArrived = false;
+
 
         private void Start()
         {
@@ -19,7 +22,14 @@ namespace GameDevWithMarco.EnvironmentalProps
 
         private void StartElevator()
         {
-            elevatorRb.DOMove(endLocation.position, moveDuration);
+
+                elevatorRb.DOMove(endLocation.position, moveDuration);
+                hasArrived = true;
+            if (hasArrived)
+            {
+                elevatorRb.DOMove(startLocation.position, moveDuration);
+                hasArrived = false;
+            }
             
         }
         public void Interact()

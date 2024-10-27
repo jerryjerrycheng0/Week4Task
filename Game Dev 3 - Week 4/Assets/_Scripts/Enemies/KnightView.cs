@@ -8,6 +8,8 @@ namespace GameDevWithMarco.Enemies
     public class KnightView : MonoBehaviour
     {
         [SerializeField] GameEvent playerSpottedEvent;
+        [SerializeField] AudioSource discoveredSound;
+        [SerializeField] AudioSource playerScream;
 
         public bool hasPlayerBeenSpotted = false;
         private void OnTriggerEnter(Collider other)
@@ -19,6 +21,10 @@ namespace GameDevWithMarco.Enemies
                 playerSpottedEvent.Raise();
 
                 hasPlayerBeenSpotted = true;
+
+                discoveredSound.Play();
+
+                playerScream.Play();
             }
         }
     }
