@@ -22,12 +22,12 @@ namespace GameDevWithMarco.Managers
             foreach (var items in objectsToActivateOnDeath)
             {
                 items.gameObject.SetActive(false);
-                // Disables the assigned game objects to ensure the UI only appears when the player is spotted
+                //Disables the assigned game objects to ensure the UI only appears when the player is spotted
             }
 
         }
 
-        // Activates the Game Over UI
+        //Activates the Game Over UI
         public void StartGameOver()
         {
 

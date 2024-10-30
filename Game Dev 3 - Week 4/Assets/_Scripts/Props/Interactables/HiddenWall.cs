@@ -26,7 +26,7 @@ namespace GameDevWithMarco.EnvironmentalProps
 
         public void Interact()
         {
-            MoveWall();
+            MoveWall(); //Opens the wall when interacted
         }
     }
 }

@@ -33,7 +33,7 @@ namespace GameDevWithMarco.Player
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E)) //Activates or deactivates any interactables
             {
                 if (thingIAmCollidingWith == null) return;
                 IInteractable interactableObject = thingIAmCollidingWith.GetComponent<IInteractable>();

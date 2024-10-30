@@ -9,7 +9,7 @@ namespace GameDevWithMarco.Player
     public class PlayerMoney : MonoBehaviour
     {
 
-        public int totalMoney = 0;
+        public int totalMoney = 0; //Counts the current money the player has
 
         public TMP_Text howMuch;
 
@@ -23,7 +23,7 @@ namespace GameDevWithMarco.Player
 
         public void AssignUI()
         {
-            howMuch.text = "$" + totalMoney;
+            howMuch.text = "$" + totalMoney; //Keep in track of the money in a UI
         }
     }
 }

@@ -28,13 +28,14 @@ namespace GameDevWithMarco.EnvironmentalProps
 
         public void Collect()
         {
-            // Add the value to the player's money
+            //Add the value to the player's money
             playerMoney.AddMoney(moneyValue);
-            collectSound.Play();
+            collectSound.Play(); //Plays money sound
         }
 
         public void Interact()
         {
+            //Interacting with E opens the chest AND collects the money
             OpenTheChest();
             Collect();
         }

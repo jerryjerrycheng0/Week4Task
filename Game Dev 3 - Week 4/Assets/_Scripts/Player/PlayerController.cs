@@ -64,6 +64,7 @@ namespace GameDevWithMarco.Player
 
                 if (!audioSource.isPlaying && Time.time >= nextWalkingSoundTime)
                 {
+                    //Plays walking sound with a slight delay
                     audioSource.clip = walkingSound;
                     audioSource.Play();
                     nextWalkingSoundTime = Time.time + walkingSoundDelay;

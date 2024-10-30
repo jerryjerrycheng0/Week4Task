@@ -25,12 +25,12 @@ namespace GameDevWithMarco.EnvironmentalProps
 
         private void TurnTorchOnOff()
         {
-            lightSound.Play();
-            if (isTheTorchOn)
+            lightSound.Play(); //Ding
+            if (isTheTorchOn) //Turns the light on
             {
                 torchLight.DOIntensity(0, torchTurningTime).SetEase(torchTurningEase);
             }
-            else
+            else //Turns the light off
             {
                 torchLight.DOIntensity(defaultIntensity, torchTurningTime).SetEase(torchTurningEase);
             }
@@ -40,7 +40,7 @@ namespace GameDevWithMarco.EnvironmentalProps
 
         public void Interact()
         {
-            TurnTorchOnOff();
+            TurnTorchOnOff(); //Calls back the Interact function
         }
     }
 }

@@ -8,9 +8,9 @@ namespace GameDevWithMarco.EnvironmentalProps
 {
     public class LootSack : MonoBehaviour, ICollectableItems
     {
-        public int moneyValue; // Amount of money to give
+        public int moneyValue; //Amount of money to give
         public bool isBig;
-        public AudioSource collectSound; // Sound to play when collected
+        public AudioSource collectSound; //Sound to play when collected
         MeshRenderer meshRenderer;
         Collider sackCollider;
         PlayerMoney playerMoney;
@@ -21,20 +21,21 @@ namespace GameDevWithMarco.EnvironmentalProps
             sackCollider = GetComponent<Collider>();
             playerMoney = FindObjectOfType<PlayerMoney>();
 
-            if (!isBig)
+            if (!isBig) //Determines the size of the bag when interacting
             {
-                moneyValue = Random.Range(1, 10);
+                moneyValue = Random.Range(1, 10); //Gives a random amount if small
             }
             else
             {
-                moneyValue = 50;
+                moneyValue = 50; //Big ones gives 50
             }
         }
         public void Collect()
         {
             playerMoney.AddMoney(moneyValue);
             collectSound.Play();
-            meshRenderer.enabled = false;
+            //Disables the mesh renderer and the colliders to ensure the sound is played when collected
+            meshRenderer.enabled = false; 
             sackCollider.enabled = false;
 
         }

@@ -9,7 +9,7 @@ namespace GameDevWithMarco
         [SerializeField] float Speed;
         void Update()
         {
-            transform.Rotate(Vector3.up, Speed * Time.deltaTime);
+            transform.Rotate(Vector3.up, Speed * Time.deltaTime); //Spins anticlockwise
         }
     }
 }
